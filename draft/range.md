@@ -1,10 +1,10 @@
-**Title**: Range by ADC - v1.1 - DRAFT
+**Title**: Range by ADC - v1.1
 
 **Community Grouping**: community/adc/extension/vXX
 
 **Authors**: Carly Huitema, Paul Knowles, Ryan Barrett
 
-**Date released**: 
+**Date released**: 25-05-2026
 
 This overlay follows official OCA Package requirements documented at [https://github.com/agrifooddatacanada/OCA_package_standard](https://github.com/agrifooddatacanada/OCA_package_standard)
 
@@ -14,7 +14,7 @@ This overlay adds minimum and maximum values (inclusive or exclusive) for attrib
 
 **Canonicalization Rules**:
 
-The ordering overlay begins with the canonical ordering of OCA overlays.
+The range overlay begins with the canonical ordering of OCA overlays.
 1) d (digest of the overlay)
 2) capture_base (capture base SAID the overlay is specific to)
 3) type (community/overlays/adc/range/1.1)
@@ -26,6 +26,7 @@ Then there objects with the name of each attribute which are lexicographically o
 ```
 "range": {
             "d": "EMta65hl_7m-_1Arw_xDsLm5Ac1c-gFiTLxnXE8Ck46D",
+            "capture_base": "EIQhXN6TmYZDHixCkPBDu9LfM9k2u9Ek_iJmpRBszqbI",
             "type": "community/overlays/adc/range/1.1",
             "attributes": {
               "attr_1": {
@@ -56,7 +57,7 @@ Then there objects with the name of each attribute which are lexicographically o
 **Test case**: 
 
 ```
-
+Intentionally left empty
 ```
 
 ## Normative references

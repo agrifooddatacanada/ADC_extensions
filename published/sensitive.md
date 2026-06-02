@@ -1,4 +1,4 @@
-**Title**: Sensitive by ADC - v1.1 - DRAFT
+**Title**: Sensitive by ADC - v1.1
 
 **Community Grouping**: community/adc/extension/vXX
 

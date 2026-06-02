@@ -1,10 +1,10 @@
-**Title**: Decimal Separator by ADC - v1.1 - DRAFT
+**Title**: Decimal Separator by ADC - v1.1
 
 **Community Grouping**: community/adc/extension/vXX
 
 **Authors**: Ali Asjad
 
-**Date released**: 
+**Date released**: 25-05-2026
 
 This overlay follows official OCA Package requirements documented at [https://github.com/agrifooddatacanada/OCA_package_standard](https://github.com/agrifooddatacanada/OCA_package_standard)
 
@@ -15,7 +15,7 @@ This overlay specifies which decimal separator is used for numeric values when t
 This overlay does not change the semantic numeric values of attributes; it only defines formatting and parsing expectations for decimal representation.
 
 Keys defined by this overlay:
-- `default_separator` (string): The default decimal separator for the entire schema. Allowed values are "." or ",".
+- `decimal_separator` (string): The decimal separator for the entire schema. Allowed values are "." or ",".
 
 **Canonicalization Rules**:
 
@@ -24,7 +24,7 @@ The decimal separator overlay begins with the canonical ordering of OCA overlays
 2) capture_base (capture base SAID the overlay is specific to)
 3) type (community/overlays/adc/decimal_separator/1.1)
 
-Next, the overlay contains `default_separator`.
+Next, the overlay contains `decimal_separator`.
 
 **Example**:
 
@@ -35,7 +35,7 @@ The following is an example of a canonicalized overlay object. The `d` value is 
   "d": "EXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
   "capture_base": "Etszl9LgLUjllI950rd2lO6rF5-BP_jGzXGBPkFZCZFA",
   "type": "community/overlays/adc/decimal_separator/1.1",
-  "decimal_separator": ",",
+  "decimal_separator": ","
 }
 ```
 
@@ -46,7 +46,9 @@ The following is an example of a canonicalized overlay object. The `d` value is 
 
 **Test case**:
 
+```
 Intentionally left empty
+```
 
 ## Normative references
 
@@ -54,4 +56,3 @@ Intentionally left empty
 - [3.2.3 Sorting of Object Properties](https://www.rfc-editor.org/rfc/rfc8785#section-3.2.3)
 - [CESR Specification](https://weboftrust.github.io/ietf-cesr/draft-ssmith-cesr.html) for SAID calculations
 - [OCA Package Standard](https://github.com/agrifooddatacanada/OCA_package_standard)
-
