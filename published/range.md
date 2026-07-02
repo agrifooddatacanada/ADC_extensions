@@ -57,7 +57,7 @@ Then there objects with the name of each attribute which are lexicographically o
 **Test case**: 
 
 ```
-Intentionally left empty
+{"d":"EJ4hU4U2cklodIdQaih9H5HO9bqGg0jdsb5jdcn0tDEf","type":"oca_package/1.0","oca_bundle":{"bundle":{"v":"OCAS11JSON0002e4_","d":"EIXHsYv-_fDMWZsBZ8vW1DPIx-FIcyYWUD5d1pMYut9Q","capture_base":{"d":"EJi6VGWxBvPSnUCrMib6tO9ixmd8DYo34t-9wHt0dW05","type":"spec/capture_base/1.1","attributes":{"DecimalValue":"Numeric"},"classification":"RDF106","flagged_attributes":[]},"overlays":{"format":{"d":"EOrDhGnZU6sVPFYFinZv2CV0IryqsIfiKPToTNsGNoJy","capture_base":"EJi6VGWxBvPSnUCrMib6tO9ixmd8DYo34t-9wHt0dW05","type":"spec/overlays/format/1.1","attribute_formats":{"DecimalValue":"^-?[0-9]+$"}},"meta":[{"d":"EHF74vaAa6OYXNQd81EHo8GrHYtIcZSxWAlktAAxO7tf","capture_base":"EJi6VGWxBvPSnUCrMib6tO9ixmd8DYo34t-9wHt0dW05","type":"spec/overlays/meta/1.1","language":"eng","description":"Schema to test the decimal separator","name":"Decimal Separator "}]}},"dependencies":[]},"extensions":{"adc":{"EJi6VGWxBvPSnUCrMib6tO9ixmd8DYo34t-9wHt0dW05":{"d":"EKy-wVVFW9ifufKUQZ_NzAHXnuI7AS5Co7ZYIev4uIKB","type":"community/adc/extension/1.0","overlays":{"ordering":{"d":"EDBNPed3y75T33yorrCU4vgGiocuMX-H9n8MbgAEb7X2","capture_base":"EJi6VGWxBvPSnUCrMib6tO9ixmd8DYo34t-9wHt0dW05","type":"community/overlays/adc/ordering/1.0","attribute_ordering":["DecimalValue"],"entry_code_ordering":{}},"range":{"d":"EOvsDHKm5yLsqvdvznOV1ajglYgqk4qLEbIIParv7mhw","capture_base":"EJi6VGWxBvPSnUCrMib6tO9ixmd8DYo34t-9wHt0dW05","type":"community/overlays/adc/range/1.0","attributes":{"DecimalValue":{"lower":"10","lower_inclusive":false,"upper":"20","upper_inclusive":true}}}}}}}}
 ```
 
 ## Normative references

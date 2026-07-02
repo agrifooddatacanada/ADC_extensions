@@ -47,7 +47,63 @@ The following is an example of a canonicalized overlay object. The `d` value is 
 **Test case**:
 
 ```
-Intentionally left empty
+{
+  "d": "EMePm-KYyHs2Rprjvx6xXblgkZKqJDoukUjmjEoptPWu",
+  "type": "oca_package/1.0",
+  "oca_bundle": {
+    "bundle": {
+      "v": "OCAS11JSON000214_",
+      "d": "EGxBspm17GfMyQwFahApmBOZoEarVW6GxpLx28cSfqLq",
+      "capture_base": {
+        "d": "EJi6VGWxBvPSnUCrMib6tO9ixmd8DYo34t-9wHt0dW05",
+        "type": "spec/capture_base/1.1",
+        "attributes": {
+          "DecimalValue": "Numeric"
+        },
+        "classification": "RDF106",
+        "flagged_attributes": []
+      },
+      "overlays": {
+        "meta": [
+          {
+            "d": "EHF74vaAa6OYXNQd81EHo8GrHYtIcZSxWAlktAAxO7tf",
+            "capture_base": "EJi6VGWxBvPSnUCrMib6tO9ixmd8DYo34t-9wHt0dW05",
+            "type": "spec/overlays/meta/1.1",
+            "language": "eng",
+            "description": "Schema to test the decimal separator",
+            "name": "Decimal Separator "
+          }
+        ]
+      }
+    },
+    "dependencies": []
+  },
+  "extensions": {
+    "adc": {
+      "EJi6VGWxBvPSnUCrMib6tO9ixmd8DYo34t-9wHt0dW05": {
+        "d": "ELP5ESyjJyawHNjcrD-2voXOkM8KKpUiLYW_oEopNU6z",
+        "type": "community/adc/extension/1.0",
+        "overlays": {
+          "decimal_separator": {
+            "d": "EFNfrJvE_BuXVsFqjragbTXwHNq6-IZJJlPKvVk0Ip61",
+            "capture_base": "EJi6VGWxBvPSnUCrMib6tO9ixmd8DYo34t-9wHt0dW05",
+            "type": "community/overlays/adc/decimal_separator/1.0",
+            "delimiter": ","
+          },
+          "ordering": {
+            "d": "EDBNPed3y75T33yorrCU4vgGiocuMX-H9n8MbgAEb7X2",
+            "capture_base": "EJi6VGWxBvPSnUCrMib6tO9ixmd8DYo34t-9wHt0dW05",
+            "type": "community/overlays/adc/ordering/1.0",
+            "attribute_ordering": [
+              "DecimalValue"
+            ],
+            "entry_code_ordering": {}
+          }
+        }
+      }
+    }
+  }
+}
 ```
 
 ## Normative references

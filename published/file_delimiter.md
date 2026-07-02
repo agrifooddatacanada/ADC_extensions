@@ -59,7 +59,69 @@ The following is a canonicalized overlay object. The SAID values are illustrativ
 **Test case**:
 
 ```
-Intentionally left empty
+{
+  "d": "EB_Qwpx--_22rJVgvX3zbgeRS_LwsUKRy-Q6Mii0z_UM",
+  "type": "oca_package/1.0",
+  "oca_bundle": {
+    "bundle": {
+      "v": "OCAS11JSON00022c_",
+      "d": "ELcFFNIxlsCBeoMVGOZ3z4_03FGlCz0yXOw3ry4tJ43R",
+      "capture_base": {
+        "d": "ECYZbkMeKLwlaMCW1kiG9OkWy5B4pExR4sbENH9G9qQF",
+        "type": "spec/capture_base/1.1",
+        "attributes": {
+          "AnotherRandomVar": "Numeric",
+          "SomeVariable": "Text"
+        },
+        "classification": "RDF401",
+        "flagged_attributes": []
+      },
+      "overlays": {
+        "meta": [
+          {
+            "d": "EEPz5yKSta1ZYMwZkHvj7sCSjbvuW1eOyRusttVkg6oM",
+            "capture_base": "ECYZbkMeKLwlaMCW1kiG9OkWy5B4pExR4sbENH9G9qQF",
+            "type": "spec/overlays/meta/1.1",
+            "language": "eng",
+            "description": "Schema to test the file delimiter",
+            "name": "File Delimiter Test"
+          }
+        ]
+      }
+    },
+    "dependencies": []
+  },
+  "extensions": {
+    "adc": {
+      "ECYZbkMeKLwlaMCW1kiG9OkWy5B4pExR4sbENH9G9qQF": {
+        "d": "EPqd_tZxboaLI8zve-7yQSvNgVvsF4jEk_TGQzjb4oVP",
+        "type": "community/adc/extension/1.0",
+        "overlays": {
+          "file_delimiter": {
+            "d": "EOYw7L0iTZbmJvXRAxuAMajHZFq4PtAmSn8CxE671zmL",
+            "capture_base": "ECYZbkMeKLwlaMCW1kiG9OkWy5B4pExR4sbENH9G9qQF",
+            "type": "community/overlays/adc/file_delimiter/1.0",
+            "delimiter": ";",
+            "escape_char": "\\",
+            "data_start_row": 3,
+            "line_terminator": "lf",
+            "quote_char": "\""
+          },
+          "ordering": {
+            "d": "EJ8Wvk5rFkODvVraR8yiPp2RtCZXNGpNc8LPyj8VQIiG",
+            "capture_base": "ECYZbkMeKLwlaMCW1kiG9OkWy5B4pExR4sbENH9G9qQF",
+            "type": "community/overlays/adc/ordering/1.0",
+            "attribute_ordering": [
+              "SomeVariable",
+              "AnotherRandomVar"
+            ],
+            "entry_code_ordering": {}
+          }
+        }
+      }
+    }
+  }
+}
 ```
 
 ## Normative references

@@ -54,7 +54,100 @@ The following is a canonicalized overlay object. SAID values are illustrative.
 **Test case**:
 
 ```
-Intentionally left empty
+{
+  "d": "EO0OVNKRL20H3mPUbgVoAA5vz6sjczgvGiow2XV6FAOV",
+  "type": "oca_package/1.0",
+  "oca_bundle": {
+    "bundle": {
+      "v": "OCAS11JSON00040c_",
+      "d": "EFP3hC3EFjI6Mg5mDBbjnqRlnzJOy6LPIUl7f6_o2D6Z",
+      "capture_base": {
+        "d": "EBoQqIshVozU3rBf27mIFncFFQd50ryjo5eJZuRQ3Nr0",
+        "type": "spec/capture_base/1.1",
+        "attributes": {
+          "ArrayDelimiter": [
+            "Text"
+          ]
+        },
+        "classification": "RDF401",
+        "flagged_attributes": []
+      },
+      "overlays": {
+        "entry": [
+          {
+            "d": "ECwnQkmYbnE32Hao_cMpUl5QfRKc52irLCGR6uJaL4A6",
+            "capture_base": "EBoQqIshVozU3rBf27mIFncFFQd50ryjo5eJZuRQ3Nr0",
+            "type": "spec/overlays/entry/1.1",
+            "language": "eng",
+            "attribute_entries": {
+              "ArrayDelimiter": {
+                "T1": "Test value 1",
+                "T2": "Test value 2",
+                "T3": "Test valuve 3"
+              }
+            }
+          }
+        ],
+        "entry_code": {
+          "d": "EFYs0d09WBWWNuG62anhNHXJdTHGaSnLybcBMeX1m1GZ",
+          "capture_base": "EBoQqIshVozU3rBf27mIFncFFQd50ryjo5eJZuRQ3Nr0",
+          "type": "spec/overlays/entry_code/1.1",
+          "attribute_entry_codes": {
+            "ArrayDelimiter": [
+              "T1",
+              "T2",
+              "T3"
+            ]
+          }
+        },
+        "meta": [
+          {
+            "d": "EMMB5NylT654XfzwFp7WY92uRuMruwHWn8Kq7yEj_a1O",
+            "capture_base": "EBoQqIshVozU3rBf27mIFncFFQd50ryjo5eJZuRQ3Nr0",
+            "type": "spec/overlays/meta/1.1",
+            "language": "eng",
+            "description": "Schema to test the array delimiter",
+            "name": "Array Delimiter Test"
+          }
+        ]
+      }
+    },
+    "dependencies": []
+  },
+  "extensions": {
+    "adc": {
+      "EBoQqIshVozU3rBf27mIFncFFQd50ryjo5eJZuRQ3Nr0": {
+        "d": "EA5R4bKQJUjS6iPc0TMA6uh5c-XPcf9k0ABYLByvVMS3",
+        "type": "community/adc/extension/1.0",
+        "overlays": {
+          "array_delimiter": {
+            "d": "EJzIjEiXnRbbKbvD9LuTN3_9l119d4X01pitgMlvPi-U",
+            "capture_base": "EBoQqIshVozU3rBf27mIFncFFQd50ryjo5eJZuRQ3Nr0",
+            "type": "community/overlays/adc/array_delimiter/1.0",
+            "attributes": {
+              "ArrayDelimiter": ";"
+            }
+          },
+          "ordering": {
+            "d": "EK-4fVPHHzaKIk64qF2tDw3fwNKRFWj7ZvS4LskQC97G",
+            "capture_base": "EBoQqIshVozU3rBf27mIFncFFQd50ryjo5eJZuRQ3Nr0",
+            "type": "community/overlays/adc/ordering/1.0",
+            "attribute_ordering": [
+              "ArrayDelimiter"
+            ],
+            "entry_code_ordering": {
+              "ArrayDelimiter": [
+                "T1",
+                "T2",
+                "T3"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
 ```
 
 ## Normative references
