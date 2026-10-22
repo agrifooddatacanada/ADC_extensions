@@ -1,8 +1,8 @@
-**Title**: Attribute Framing by ADC - v1.1
+**Title**: Entry Code Framing by ADC - v1.1
 
 **Community Grouping**: community/adc/extension/v1.1
 
-**Authors**: Carly Huitema, Paul Knowles, Steven Mugisha Mizero
+**Authors**: Carly Huitema, Paul Knowles, Steven Mugisha Mizero, Ali Asjad
 
 **Date released**:
 
@@ -16,7 +16,7 @@ In OCA, three types of information are contextually framed:
 2. **Units** where a schema unit is framed to a unit drawn from another concept.
 3. **Entry codes** where a schema entry code term is framed to a term drawn from another concept.
 
-This overlay covers **attribute framing**.
+This overlay covers **entry code framing**.
 
 **Canonicalization Rules**:
 
@@ -24,8 +24,8 @@ The framing overlays begin with the canonical ordering of [extension overlays](h
 
 1. `d` (digest of the overlay)
 2. `capture_base` (capture base SAID the overlay is specific to)
-3. `type` (`community/overlays/adc/attribute_framing/1.1`)
-4. `framing_metadata`, then `attributes`, each lexicographically ordered.
+3. `type` (`community/overlays/adc/entry_code_framing/1.1`)
+4. `framing_metadata`, then `entry_codes`, each lexicographically ordered.
 
 **Example**:
 
@@ -44,6 +44,44 @@ The framing overlays begin with the canonical ordering of [extension overlays](h
   },
   "flagged_attributes": []
 }
+```
+
+**Entry code overlay:** showing the schema entry codes to be framed:
+
+```
+{
+  "capture_base": "Etszl9LgLUjllI950rd2lO6rF5-BP_jGzXGBPkFZCZFA",
+  "digest": "EHg4AoXVKZrgFMN_c91qo4b9sgF3mWAtAtqn7no85Ldo",
+  "type": "spec/overlays/entry_code/1.0",
+  "attribute_entry_codes": {
+    "Sample_type": [
+      "BLD001",
+      "BLD002",
+      "BLD003",
+      "BLD004",
+      "BLD005"
+    ]
+  }
+}
+
+// Entry Overlay
+
+{
+  "capture_base": "Etszl9LgLUjllI950rd2lO6rF5-BP_jGzXGBPkFZCZFA",
+  "digest": "EiX132uHOFWph3kwBvjnkalbGDYagttuKr97olGRLOy4",
+  "type": "spec/overlays/entry/1.0",
+  "language": "en",
+  "attribute_entries": {
+    "Sample_type": {
+      "BLD001": "No_preserv_no_anti-coag",
+      "BLD002": "K2_EDTA",
+      "BLD003": "sodium_citrate",
+      "BLD004": "sodium_heparin",
+      "BLD005": "acid_citrate_dextrose"
+    }
+  }
+}
+
 ```
 
 #### Framing Overlays and Relationships
@@ -90,97 +128,96 @@ After `d`, `capture_base`, and `type`, `framing_metadata` MUST follow.
 
 `framing_metadata` declares a **primary vocabulary** (`prefix`, `label`, `location`, `version`) and optional supporting vocabularies under `imports`. This establishes a clear hierarchy—for example, DCAT is what is being framed, while `dcterms` and `foaf` are imported to support it—while providing reusable prefixes for term references. Each key in `imports` is the supporting vocabulary's prefix; each value MUST include `label`, `location`, and `version`.
 
-**Attribute framing overlay example**
+**Entry code framing overlay example**
 
 ```
 
-// canonicalization rules: d, capture_base, type, framing_metadata, attributes
+// canonicalization rules: d, capture_base, type, framing_metadata, entry_codes
 
-"attribute_framing": [
+"entry_code_framing": [
   {
-    "d": "EL1aIB8CxU9H6DTFtl6h4KK1Tj5jMhYRra2N42jVtaZL",
-    "capture_base": "EJRQHb6p4iBOt1oB6jdeG6cQhU9gY9KuI7oyAtuky8fI",
-    "type": "community/overlays/adc/attribute_framing/1.0",
+    "d": "EAKhiQ2DNuy8_X2j-tQ3szcJHGb0cZou-eJ5UvdjKr_N",
+    "capture_base": "EEs4WAywiDY8ScSrCWsw4fm75q9sdHeEnfP6S60cTsCt",
+    "type": "community/overlays/adc/entry_code_framing/1.0",
     "framing_metadata": {
-      "id": "DCAT",
-      "label": "Data Catalog Vocabulary",
-      "location": "https://www.w3.org/TR/vocab-dcat-3/",
-      "version": "1.0",
-      "imports": {
-        "foaf": {
-          "label": "Friend of a Friend",
-          "location": "http://xmlns.com/foaf/0.1/",
-          "version": "0.1"
-        }
-      }
+      "id": "European Vocab",
+      "label": "England",
+      "location": "twitter.com",
+      "version": "1.2"
     },
-    "attributes": {
-      "dcterms.title": {
-        "description": "A name given to the resource.",
-        "framing_justification": "semapv:MappingReview",
-        "predicate_id": "skos:relatedMatch",
-        "term_id": "title object"
-      },
-      "dcterms.type": {
-        "description": "The nature or genre of the resource.",
-        "framing_justification": "semapv:ManualMappingCuration",
-        "predicate_id": "skos:broadMatch",
-        "term_id": "type object"
+    "entry_codes": {
+      "samplers": {
+        "Aedan": {
+          "description": "European Aedan",
+          "framing_justification": "semapv:UnspecifiedMatching",
+          "predicate_id": "skos:relatedMatch",
+          "term_id": "Aedan object"
+        }
       }
     }
   },
   {
-    "d": "EBLcpWf4DV6Q2IWqsbcufmLlF7mUwiPgB5PxNG8nibEv",
-    "capture_base": "EJRQHb6p4iBOt1oB6jdeG6cQhU9gY9KuI7oyAtuky8fI",
-    "type": "community/overlays/adc/attribute_framing/1.0",
+    "d": "EOMiBxxLce3X8jvjl79GWnwackbKDu0JommhjP4wXdnd",
+    "capture_base": "EEs4WAywiDY8ScSrCWsw4fm75q9sdHeEnfP6S60cTsCt",
+    "type": "community/overlays/adc/entry_code_framing/1.0",
     "framing_metadata": {
-      "id": "Localid",
-      "label": "Local vocab",
-      "location": "https://fas.org/career/ai-safety-pef/",
-      "version": "1.1",
-      "imports": {
-        "dcterms": {
-          "label": "DCMI Metadata Terms",
-          "location": "http://purl.org/dc/terms/",
-          "version": "1.1"
+      "id": "FOODON",
+      "label": "Food Ontology",
+      "location": "https://raw.githubusercontent.com/FoodOntology/foodon/master/foodon.owl",
+      "version": "1.0"
+    },
+    "entry_codes": {
+      "farm": {
+        "A": {
+          "description": "hansel's farm",
+          "framing_justification": "semapv:LexicalMatching",
+          "predicate_id": "skos:exactMatch",
+          "term_id": "farm object"
         }
       }
+    }
+  },
+  {
+    "d": "EMIHPf-KzCyiqVWRpDSXsnb2GMd2ObhqSk_rt2HoNLwF",
+    "capture_base": "EEs4WAywiDY8ScSrCWsw4fm75q9sdHeEnfP6S60cTsCt",
+    "type": "community/overlays/adc/entry_code_framing/1.0",
+    "framing_metadata": {
+      "id": "Local",
+      "label": "Local vocab",
+      "location": "youtube.com",
+      "version": "1.1"
     },
-    "attributes": {
-      "dcterms.title": {
-        "description": "A name given to teh resource",
-        "framing_justification": "semapv:MappingReview",
-        "predicate_id": "skos:relatedMatch",
-        "term_id": "title object"
-      },
-      "dcterms.type": {
-        "description": "The nature or genre of the resource",
-        "framing_justification": "semapv:ManualMappingCuration",
-        "predicate_id": "skos:broadMatch",
-        "term_id": "type object"
+    "entry_codes": {
+      "samplers": {
+        "Aedan": {
+          "description": "aedan the sampler",
+          "framing_justification": "semapv:LogicalReasoning",
+          "predicate_id": "skos:narrowMatch",
+          "term_id": "aedan object"
+        }
       }
     }
   }
 ]
 ```
 
-Each keyed object under `attributes` MAY include:
+Each keyed object under `entry_codes.<attribute>` MAY include:
 
 | Property                | Required | Description                                                                 |
 | ----------------------- | -------- | --------------------------------------------------------------------------- |
-| description             | no       | Human-readable description of the framed attribute / mapped concept         |
+| description             | no       | Human-readable description of the framed entry code / mapped concept        |
 | framing_justification   | yes      | SSSOM matching justification (`semapv:` term)                               |
 | predicate_id            | yes      | SKOS mapping predicate describing the relationship                          |
 | term_id                 | yes      | Object term from the primary or imported vocabulary                         |
 
-### Rules summary for attribute framing overlays
+### Rules summary for entry code framing overlays
 
-- For each framing overlay there must be a `framing_metadata.prefix` identifying the primary vocabulary.
-- Within each overlay framing type (attribute, unit or entry_code) each `prefix` must be unique.
+- For each framing overlay there must be a `framing_metadata.id` identifying the primary vocabulary.
+- Within each overlay framing type (attribute, unit or entry_code) each `id` must be unique.
 - `framing_metadata.imports` MAY declare supporting vocabularies; each import key is a prefix and MUST include `label`, `location`, and `version`.
 - Not every term must be framed
-- For each attribute framing there can be only one `skos:exactMatch` per term.
-- Attribute framing entries MAY include an optional `description`
+- For each entry_code framing there can be only one `skos:exactMatch` per term.
+- Entry code framing entries MAY include an optional `description`
 
 **Predicate_id**
 
